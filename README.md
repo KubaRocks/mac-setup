@@ -13,3 +13,4 @@ $ bash <(curl -s https://raw.githubusercontent.com/genjusz/mac-setup/master/boot
 - [ ] apache config
 - [ ] nvm config (`brew info nvm`)
 - [x] hologram executable
+- [ ] meaningful readme ;)
