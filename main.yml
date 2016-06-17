@@ -8,7 +8,7 @@
   tasks:
     - name: Get list of tapped repositories.
       command: brew tap
-      register: {{ homebrew_tap_list }}
+      register: homebrew_tap_list
 
     - name: Tap required repositories
       command: brew tap {{ item }}
@@ -17,12 +17,12 @@
 
     - name: Get list of installed homebrew packages.
       command: brew list
-      register: {{ homebrew_list }}
+      register: homebrew_list
       changed_when: false
 
     - name: Get list of apps installed with cask.
       command: brew cask list
-      register: {{ homebrew_cask_list }}
+      register: homebrew_cask_list
       changed_when: false
 
     - name: Install apps via `brew cask`.
