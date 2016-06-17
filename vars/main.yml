@@ -20,7 +20,7 @@ homebrew_installed_packages:
   - nvm
 
 homebrew_taps:
-  - homebrew/cask
+  - caskroom/cask
   - homebrew/php
   - homebrew/versions
 
