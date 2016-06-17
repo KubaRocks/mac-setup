@@ -6,34 +6,17 @@
     - vars/main.yml
 
   tasks:
-    - name: Get list of tapped repositories.
-      command: brew tap
-      register: homebrew_tap_list
-
-    - name: Tap required repositories
-      command: brew tap {{ item }}
+    - name: Tap homebrew repositories
+      homebrew_tap: tap={{ item }}
       with_items: "{{ homebrew_taps }}"
-      when: "'{{ item }}' not in homebrew_tap_list.stdout"
 
-    - name: Get list of installed homebrew packages.
-      command: brew list
-      register: homebrew_list
-      changed_when: false
-
-    - name: Get list of apps installed with cask.
-      command: brew cask list
-      register: homebrew_cask_list
-      changed_when: false
-
-    - name: Install apps via `brew cask`.
-      command: brew cask install {{ item }}
+    - name: Install apps via `brew cask`
+      homebrew_cask: name={{ item }}
       with_items: "{{ homebrew_cask_apps }}"
-      when: "'{{ item }}' not in homebrew_cask_list.stdout"
 
-    - name: Install configured homebrew packages.
-      command: "brew install {{ item }}"
-      with_items: "{{ homebrew_installed_packages }}"
-      when: "'{{ item }}' not in homebrew_list.stdout"
+    - name: Install configured homebrew packages
+      homebrew: name={{ item }} state=latest
+      with_items: "{{ homebrew_packages }}"
 
     - name: Install npm ecosystem
       npm: name={{ item }} global=yes state=present
