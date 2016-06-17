@@ -39,4 +39,4 @@ fi
 
 cd $ANSIBLE_CONFIGURATION_DIRECTORY
 git pull
-ansible-playbook main.yml -i inventory -u $(whoami) -U $(whoami) --ask-sudo-pass
+ansible-playbook main.yml -u $(whoami) -U $(whoami) --ask-sudo-pass
