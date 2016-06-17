@@ -9,7 +9,7 @@ $ bash <(curl -s https://raw.githubusercontent.com/genjusz/mac-setup/master/boot
 
 ## TODO
 
-[] php config
-[] apache config
-[] nvm config (`brew info nvm`)
-[] hologram executable
+- [ ] php config
+- [ ] apache config
+- [ ] nvm config (`brew info nvm`)
+- [x] hologram executable
