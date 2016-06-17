@@ -1,0 +1,48 @@
+---
+homebrew_installed_packages:
+  - tree
+  - wget
+  - fish
+  - pv
+  - ssh-copy-id
+  - redis
+  - mysql56
+  - php56
+  - php56-intl
+  - php56-redis
+  - php56-imagic
+  - php56-mcrypt
+  - imagemagick
+  - ruby
+  - elasticsearch17
+  - heroku-toolbelt
+  - node012
+  - nvm
+
+homebrew_taps:
+  - homebrew/cask
+  - homebrew/php
+  - homebrew/versions
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - atom
+  - caffeine
+  - dropbox
+  - firefox
+  - google-chrome
+  - phpstorm
+  - iterm2
+  - java
+  - skype
+  - slack
+  - spotify
+  - vagrant
+  - virtualbox
+  - wkhtmltopdf
+
+npm_packages:
+   - gulp
+
+gem_packages:
+    - hologram
