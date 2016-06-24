@@ -3,7 +3,7 @@
 One-liner to rule them all ! ! !
 
 ```bash
-$ bash <(curl -s https://raw.githubusercontent.com/genjusz/mac-setup/master/bootstrap.sh)
+$ curl -L https://raw.githubusercontent.com/genjusz/mac-setup/master/bootstrap.sh | bash
 ```
 
 
