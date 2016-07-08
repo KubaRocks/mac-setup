@@ -81,8 +81,8 @@
       become: yes
       lineinfile:
         dest: /etc/apache2/httpd.conf
-        regexp: {{ item.regexp }}
-        line: {{ item.line }}
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
         state: present
       with_items: "{{ apache_configuration_items }}"
       notify: restart apache
@@ -105,9 +105,9 @@
     - name: PHP configuration
       ini_file:
         dest: /usr/local/etc/php/5.6/php.ini
-        section: {{ item.section }}
-        option: {{ item.option }}
-        value: {{ item.value }}
+        section: "{{ item.section }}"
+        option: "{{ item.option }}"
+        value: "{{ item.value }}"
       with_items: "{{ php_configuration_items }}"
       notify: restart apache
 
