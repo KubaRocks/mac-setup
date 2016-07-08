@@ -50,6 +50,12 @@
     # dnsmasq config                                                           #
     ############################################################################
 
+    - name: Create /etc/resolver directory
+      become: yes
+      file:
+        path: /etc/resolver
+        state: directory
+
     - name: Add *.dev resolver
       become: yes
       lineinfile:
