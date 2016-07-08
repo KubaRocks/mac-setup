@@ -1,0 +1,36 @@
+---
+homebrew_packages:
+  - mongodb
+
+homebrew_taps:
+  - caskroom/cask
+  - homebrew/php
+  - homebrew/versions
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - 1password
+  - adobe-creative-cloud
+  - bartender
+  - caffeine
+  - cleanmymac
+  - coderunner
+  - daisydisk
+  - dropbox
+  - evernote
+  - fantastical
+  - flash-player
+  - fing
+  - geekbench
+  - macdown
+  - paw
+  - skitch
+  - spotify
+  - timemachineeditor
+  - totalterminal
+  - transmit
+  - trim-enabler
+  - tunnelblick
+  # - licecap
+  # - vlc
+  # - alfred

@@ -8,6 +8,7 @@ homebrew_packages:
   - redis
   - mysql56
   - php56
+  - php56-xdebug
   - php56-intl
   - php56-redis
   - php56-imagick
@@ -18,17 +19,18 @@ homebrew_packages:
   - heroku-toolbelt
   - node012
   - nvm
+  - dnsmasq
 
 homebrew_taps:
   - caskroom/cask
   - homebrew/php
   - homebrew/versions
+  - homebrew/services
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - atom
-  - caffeine
-  - dropbox
+  - cocoarestclient
   - firefox
   - google-chrome
   - phpstorm
@@ -36,10 +38,11 @@ homebrew_cask_apps:
   - java
   - skype
   - slack
-  - spotify
   - vagrant
   - virtualbox
   - wkhtmltopdf
+  - sequel-pro
+  - robomongo
 
 npm_packages:
    - gulp
