@@ -121,19 +121,19 @@
     # nvm config                                                               #
     ############################################################################
 
-    - name: Create ~/.nvm directory
-      file:
-        path: ~/.nvm
-        state: directory
-
-    - name: Add NVM_DIR var to .bash_profile
-      lineinfile:
-        dest: ~/.bash_profile
-        line: 'export NVM_DIR="$HOME/.nvm"'
-        state: present
-
-    - name: Add nvm.sh to .bash_profile
-      lineinfile:
-        dest: ~/.bash_profile
-        line: '. "$(brew --prefix nvm)/nvm.sh"'
-        state: present
+    # - name: Create ~/.nvm directory
+    #   file:
+    #     path: ~/.nvm
+    #     state: directory
+    #
+    # - name: Add NVM_DIR var to .bash_profile
+    #   lineinfile:
+    #     dest: ~/.bash_profile
+    #     line: 'export NVM_DIR="$HOME/.nvm"'
+    #     state: present
+    #
+    # - name: Add nvm.sh to .bash_profile
+    #   lineinfile:
+    #     dest: ~/.bash_profile
+    #     line: '. "$(brew --prefix nvm)/nvm.sh"'
+    #     state: present

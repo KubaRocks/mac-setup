@@ -37,6 +37,6 @@ $ brew cask install --force $(brew cask list)
 
 - [x] php config
 - [x] apache config
-- [x] nvm config (`brew info nvm`)
+- [ ] nvm config (`brew info nvm`)
 - [x] hologram executable
 - [ ] meaningful readme ;)
