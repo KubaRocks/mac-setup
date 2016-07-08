@@ -39,8 +39,8 @@ fi
 
 cd $ANSIBLE_CONFIGURATION_DIRECTORY
 git pull
-ansible-playbook dev.yml -u $(whoami) -U $(whoami) --ask-sudo-pass
-ansible-playbook personal.yml -u $(whoami) -U $(whoami) --ask-sudo-pass
+ansible-playbook dev.yml -u $(whoami) --ask-sudo-pass
+ansible-playbook personal.yml -u $(whoami) --ask-sudo-pass
 
 read -p "Do You wish to configure macOS now ? [yN] " configureMacOS
 if [[ $configureMacOS == 'y' ]]; then
