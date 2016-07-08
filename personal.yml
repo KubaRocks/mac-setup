@@ -11,9 +11,7 @@
       with_items: "{{ homebrew_taps }}"
 
     - name: Install apps via `brew cask`
-      homebrew_cask:
-        name: "{{ item }}"
-        install_options: "appdir={{ homebrew_cask_appdir }}"
+      homebrew_cask: name={{ item }} # install_options="appdir={{ homebrew_cask_appdir }}"
       with_items: "{{ homebrew_cask_apps }}"
 
     - name: Install configured homebrew packages
