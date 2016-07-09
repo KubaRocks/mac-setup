@@ -83,6 +83,9 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
+# Enable dark menu bar and Dock
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
+
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
