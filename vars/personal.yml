@@ -1,5 +1,6 @@
 ---
 personal:
+  homebrew_taps: []
   homebrew_packages:
     - mongodb
 
@@ -29,3 +30,5 @@ personal:
     # - licecap
     # - vlc
     # - alfred
+    npm_packages: []
+    gem_packages: []

@@ -1,5 +1,12 @@
 ---
+homebrew_cask_appdir: /Applications
 dev:
+  homebrew_taps:
+    - caskroom/cask
+    - homebrew/php
+    - homebrew/versions
+    - homebrew/services
+
   homebrew_packages:
     - tree
     - wget
@@ -22,13 +29,6 @@ dev:
     - nvm
     - dnsmasq
 
-  homebrew_taps:
-    - caskroom/cask
-    - homebrew/php
-    - homebrew/versions
-    - homebrew/services
-
-  homebrew_cask_appdir: /Applications
   homebrew_cask_apps:
     - atom
     - cocoarestclient
