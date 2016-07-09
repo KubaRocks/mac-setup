@@ -23,5 +23,5 @@
       command: brew services restart homebrew/versions/elasticsearch17
 
   tasks:
-    - include: tasks/dev.yml
-    - include: tasks/personal.yml
+    - include: tasks/install.yml
+    - include: tasks/config.yml

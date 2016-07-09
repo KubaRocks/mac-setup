@@ -121,7 +121,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 0
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/Warsaw" > /dev/nul
+sudo systemsetup -settimezone "Europe/Warsaw" > /dev/null
 
 # Set language and text formats
 defaults write NSGlobalDomain AppleLanguages -array "en" "pl"
