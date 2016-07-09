@@ -30,5 +30,6 @@ personal:
     # - licecap
     # - vlc
     # - alfred
-    npm_packages: []
-    gem_packages: []
+
+  npm_packages: []
+  gem_packages: []
