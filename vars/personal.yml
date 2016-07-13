@@ -16,7 +16,7 @@ personal:
     - dropbox
     - evernote
     - fantastical
-    - flash-player
+    # - flash-player
     - fing
     - geekbench
     - macdown
