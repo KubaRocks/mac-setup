@@ -3,6 +3,7 @@ personal:
   homebrew_taps: []
   homebrew_packages:
     - mongodb
+    - httpie
 
   homebrew_cask_apps:
     - 1password
