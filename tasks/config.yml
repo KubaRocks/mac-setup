@@ -31,11 +31,6 @@
 # Apache config                                                                #
 ################################################################################
 
-- name: Create projects directory
-  file:
-    path: ~/Sites
-    state: directory
-
 - name: Configure Apache
   become: yes
   lineinfile:

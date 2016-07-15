@@ -4,6 +4,10 @@ personal:
   homebrew_packages:
     - mongodb
     - httpie
+    - ngrep
+    - coreutils
+    - bash-completion2
+    - speedtest_cli
 
   homebrew_cask_apps:
     - 1password

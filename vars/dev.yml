@@ -28,6 +28,7 @@ dev:
     - node012
     - nvm
     - dnsmasq
+    - rsync
 
   homebrew_cask_apps:
     - atom
