@@ -8,6 +8,17 @@ One-liner to rule them all ! ! !
 $ curl -L https://raw.githubusercontent.com/genjusz/mac-setup/master/bootstrap.sh | bash
 ```
 
+## TODO
+
+- [x] php config
+- [x] apache config
+- [x] hologram executable
+- [ ] meaningful readme ;)
+- [ ] nvm config (`brew info nvm`)
+- [ ] ensure services are running
+- [ ] improve merging `vars` from `dev.yml` and `personal.yml`
+- [ ] dotfiles
+
 ## Apps available via App Store
 
 * Flexiglass
@@ -32,13 +43,3 @@ Reinstall all `brew cask apps`
 ```bash
 $ brew cask install --force $(brew cask list)
 ```
-
-## TODO
-
-- [x] php config
-- [x] apache config
-- [ ] nvm config (`brew info nvm`)
-- [x] hologram executable
-- [ ] meaningful readme ;)
-- [ ] ensure services are running
-- [ ] improve merging `vars` from `dev.yml` and `personal.yml`
