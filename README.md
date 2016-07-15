@@ -40,3 +40,5 @@ $ brew cask install --force $(brew cask list)
 - [ ] nvm config (`brew info nvm`)
 - [x] hologram executable
 - [ ] meaningful readme ;)
+- [ ] ensure services are running
+- [ ] improve merging `vars` from `dev.yml` and `personal.yml`
