@@ -8,6 +8,7 @@ personal:
     - coreutils
     - bash-completion2
     - speedtest_cli
+    - thefuck
 
   homebrew_cask_apps:
     - 1password
@@ -30,7 +31,6 @@ personal:
     - timemachineeditor
     - totalterminal
     - transmit
-    - trim-enabler
     - tunnelblick
     # - licecap
     # - vlc
