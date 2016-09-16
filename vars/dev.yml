@@ -29,7 +29,7 @@ dev:
     - node012
     - nvm
     - dnsmasq
-    - rsync
+    - homebrew/dupes/rsync
 
   homebrew_cask_apps:
     - atom
@@ -52,3 +52,13 @@ dev:
 
   gem_packages:
     - hologram
+
+  services:
+    - name: dnsmasq
+      root: true
+    - name: mysql56
+      root: false
+    - name: elasticsearch17
+      root: false
+    - name: redis
+      root: false  

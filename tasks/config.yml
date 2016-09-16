@@ -31,6 +31,12 @@
 # Apache config                                                                #
 ################################################################################
 
+- name: Ensure ~/Sites exists
+  file:
+    path: ~/Sites
+    state: directory
+    follow: yes
+
 - name: Configure Apache
   become: yes
   lineinfile:
@@ -69,19 +75,41 @@
 # nvm config                                                                   #
 ################################################################################
 
-# - name: Create ~/.nvm directory
-#   file:
-#     path: ~/.nvm
-#     state: directory
-#
-# - name: Add NVM_DIR var to .bash_profile
-#   lineinfile:
-#     dest: ~/.bash_profile
-#     line: 'export NVM_DIR="$HOME/.nvm"'
-#     state: present
-#
-# - name: Add nvm.sh to .bash_profile
-#   lineinfile:
-#     dest: ~/.bash_profile
-#     line: '. "$(brew --prefix nvm)/nvm.sh"'
-#     state: present
+- name: Create ~/.nvm directory
+  file:
+    path: ~/.nvm
+    state: directory
+
+- name: Add symbolic link to nvm.sh
+  file:
+    src: /usr/local/opt/nvm/nvm.sh
+    dest: ~/.nvm/nvm.sh
+    state: link
+
+################################################################################
+# services                                                                     #
+################################################################################
+
+- name: List running services
+  command: sh -s "brew services list | grep started"
+  register: running_services_list
+  changed_when: false
+
+- name: Start services
+  command: brew services start {{ item.name }}
+  become: "{{ item.root }}"
+  with_items: "{{ dev.services }}"
+  when: "'{{ item.name }}' not in running_services_list.stdout"
+
+- name: Check if apache is running
+  become: yes
+  command: apachectl
+  register: apachectl_cmd
+  changed_when: false
+  ignore_errors: yes
+
+- name: Start apache
+  become: yes
+  command: apachectl start
+  when: "'already running' in apachectl_cmd.stdout"
+  ignore_errors: yes
