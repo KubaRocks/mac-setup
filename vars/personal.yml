@@ -32,6 +32,8 @@ personal:
     - totalterminal
     - transmit
     - tunnelblick
+    - keka
+    - dropshare
     # - licecap
     # - vlc
     # - alfred
