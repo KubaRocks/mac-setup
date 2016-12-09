@@ -13,7 +13,7 @@ dev:
     - fish
     - pv
     - ssh-copy-id
-    - httpd24
+    - homebrew/apache/httpd24
     - redis
     - mysql56
     - php56
