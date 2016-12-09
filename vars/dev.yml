@@ -13,6 +13,7 @@ dev:
     - fish
     - pv
     - ssh-copy-id
+    - httpd24
     - redis
     - mysql56
     - php56
@@ -56,9 +57,11 @@ dev:
   services:
     - name: dnsmasq
       root: true
+    - name: httpd24
+      root: false
     - name: mysql56
       root: false
     - name: elasticsearch17
       root: false
     - name: redis
-      root: false  
+      root: false
