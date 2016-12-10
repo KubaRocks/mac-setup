@@ -16,7 +16,7 @@ personal:
     - bartender
     - caffeine
     - cleanmymac
-    - coderunner
+    # - coderunner
     - daisydisk
     - dropbox
     - evernote
@@ -29,10 +29,11 @@ personal:
     - skitch
     - spotify
     - timemachineeditor
-    - totalterminal
+    # - totalterminal
     - transmit
     - tunnelblick
     - keka
+    - kodi
     # - dropshare
     # - licecap
     # - vlc
