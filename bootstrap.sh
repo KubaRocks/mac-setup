@@ -43,6 +43,11 @@ if [[ ! -x /usr/local/bin/ansible ]]; then
     brew install ansible
 fi
 
+if [[ ! `ansible --version | grep 2.` ]]; then
+    echo "This playbook works with at least Ansible 2.0. Please update."
+    exit 1
+fi
+
 # Clone down the Ansible repo
 if [[ ! -d $ANSIBLE_CONFIGURATION_DIRECTORY ]]; then
     git clone https://github.com/genjusz/mac-setup $ANSIBLE_CONFIGURATION_DIRECTORY

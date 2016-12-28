@@ -62,7 +62,7 @@ $ sphp 71
 
 Running example:
 
-![PHP version switcher](https://goo.gl/DyNZdQ)
+![PHP version switcher](http://drop.abneg.at/Screen-Recording-2016-12-28-13-01-50.gif)
 
 ## Tips & Tricks
 
