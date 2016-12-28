@@ -1,11 +1,62 @@
 ---
 ################################################################################
-# software install                                                             #
+# tap repositories                                                             #
 ################################################################################
 
 - name: Tap homebrew repositories
   homebrew_tap: tap={{ item }}
   with_items: "{{ dev.homebrew_taps + personal.homebrew_taps }}"
+
+################################################################################
+# Apache install                                                               #
+################################################################################
+
+- name: Stop system Apache
+  become: yes
+  command: apachectl stop
+
+- name: Unload system Apache Deamon
+  become: yes
+  shell: "launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null"
+
+- name: Install Apache 2.4 from brew
+  homebrew:
+    name: httpd24
+    state: latest
+    install_options: with-privileged-ports, with-http2
+
+################################################################################
+# PHP install                                                                  #
+################################################################################
+
+- name: Install php versions
+  shell: "brew install {{ item }} --with-httpd24; brew unlink {{ item }};"
+  args:
+    creates: "/usr/local/opt/{{ item }}/"
+  # homebrew: name="{{ item }}" state="unlinked" install_options="with-httpd24"
+  with_items: "{{ dev.php_versions }}"
+
+- name: Install php extensions
+  shell: "brew link {{ item[0] }}; brew install {{ item[0] ~ '-' ~ item[1] }}; brew unlink {{ item[0] }};"
+  args:
+    creates: "/usr/local/Cellar/{{ item[0] ~ '-' ~ item[1] }}"
+  with_nested:
+    - "{{ dev.php_versions }}"
+    - "{{ dev.php_extensions }}"
+
+- name: Switch PHP script
+  shell: "curl -L https://gist.github.com/w00fz/142b6b19750ea6979137b963df959d11/raw > /usr/local/bin/sphp;"
+  args:
+    creates: "/usr/local/bin/sphp"
+
+- name: Execution attributes for sphp script
+  file:
+    path: "/usr/local/bin/sphp"
+    mode: "0755"
+
+################################################################################
+# software install                                                             #
+################################################################################
 
 - name: Install apps via `brew cask`
   homebrew_cask: name="{{ item }}" # install_options="appdir={{ homebrew_cask_appdir }}"

@@ -37,6 +37,12 @@
     state: directory
     follow: yes
 
+- name: Ensure Virtual Hosts directory exists
+  file:
+    path: /usr/local/etc/apache2/2.4/vhosts
+    state: directory
+    follow: yes
+
 - name: Configure Apache
   become: yes
   lineinfile:
@@ -47,6 +53,28 @@
   with_items: "{{ apache_configuration_items }}"
   notify: restart apache
 
+- name: Remove PHP modules
+  lineinfile:
+    dest: /usr/local/etc/apache2/2.4/httpd.conf
+    regexp: "^#?LoadModule php[5|7]_module    /usr/local/opt/{{ item }}/libexec/apache2/libphp[5|7].so"
+    state: absent
+  with_items: "{{ dev.php_versions }}"
+
+- name: Add PHP 5 module
+  lineinfile:
+    dest: /usr/local/etc/apache2/2.4/httpd.conf
+    regexp: "LoadModule php5_module"
+    insertafter: "^LoadModule rewrite_module libexec/mod_rewrite.so"
+    line: "LoadModule php5_module /usr/local/lib/libphp5.so"
+    state: present
+
+- name: Add PHP 7 module
+  lineinfile:
+    dest: /usr/local/etc/apache2/2.4/httpd.conf
+    regexp: "LoadModule php7_module"
+    insertafter: "^LoadModule php5_module /usr/local/lib/libphp5.so"
+    line: "#LoadModule php7_module /usr/local/lib/libphp7.so"
+    state: present
 
 - name: Add apache vhosts configuration
   become: yes
@@ -64,11 +92,13 @@
 
 - name: PHP configuration
   ini_file:
-    dest: /usr/local/etc/php/5.6/php.ini
-    section: "{{ item.section }}"
-    option: "{{ item.option }}"
-    value: "{{ item.value }}"
-  with_items: "{{ php_configuration_items }}"
+    dest: /usr/local/etc/php/{{ item[1] }}/php.ini
+    section: "{{ item[0].section }}"
+    option: "{{ item[0].option }}"
+    value: "{{ item[0].value }}"
+  with_nested:
+    - "{{ php_configuration_items }}"
+    - ["5.5", "5.6", "7.0", "7.1"]
   notify: restart apache
 
 ################################################################################

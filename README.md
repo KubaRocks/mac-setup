@@ -15,7 +15,7 @@ $ curl -L https://raw.githubusercontent.com/genjusz/mac-setup/master/bootstrap.s
 - [x] hologram executable
 - [ ] meaningful readme ;)
 - [ ] nvm config (`brew info nvm`)
-- [ ] ensure services are running
+- [x] ensure services are running
 - [ ] improve merging `vars` from `dev.yml` and `personal.yml`
 - [ ] dotfiles
 
@@ -35,6 +35,26 @@ $ curl -L https://raw.githubusercontent.com/genjusz/mac-setup/master/bootstrap.s
 ## Other apps
 
 * PS4 Remote Play
+
+## PHP version switcher
+
+This setup installs 4 versions of php: 5.5, 5.6, 7.0 and 7.1
+To switch between versions run:
+
+```bash
+# php 5.5
+$ sphp 55
+# php 5.6
+$ sphp 56
+# php 7.0
+$ sphp 70
+# php 7.1
+$ sphp 71
+```
+
+Running example:
+
+![PHP version switcher](https://goo.gl/DyNZdQ)
 
 ## Tips & Tricks
 

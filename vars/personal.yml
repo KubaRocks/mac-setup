@@ -4,6 +4,7 @@ personal:
   homebrew_packages:
     - mongodb
     - httpie
+    - ffmpeg
     - ngrep
     - coreutils
     - bash-completion2
@@ -15,8 +16,8 @@ personal:
     - adobe-creative-cloud
     - bartender
     - caffeine
-    - cleanmymac
-    # - coderunner
+    # - cleanmymac    // install via setapp
+    # - coderunner    // install via setapp
     - daisydisk
     - dropbox
     - evernote
@@ -34,7 +35,9 @@ personal:
     - tunnelblick
     - keka
     - kodi
-    # - dropshare
+    - logitech-unifying
+    - qlmarkdown
+    - dropshare
     # - licecap
     # - vlc
     # - alfred

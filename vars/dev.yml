@@ -1,8 +1,25 @@
 ---
 homebrew_cask_appdir: /Applications
 dev:
+  php_versions:
+    - php55
+    - php56
+    - php70
+    - php71
+
+  php_extensions:
+    - xdebug
+    - intl
+    - redis
+    - imagick
+    - mcrypt
+    - opcache
+    - apcu
+    - yaml
+
   homebrew_taps:
     - caskroom/cask
+    - homebrew/apache
     - homebrew/php
     - homebrew/versions
     - homebrew/services
@@ -13,18 +30,10 @@ dev:
     - fish
     - pv
     - ssh-copy-id
-    - homebrew/apache/httpd24
     - redis
     - mysql56
-    - php56
-    - php56-xdebug
-    - php56-intl
-    - php56-redis
-    - php56-imagick
-    - php56-mcrypt
     - composer
     - imagemagick
-    - ruby
     - elasticsearch17
     - heroku-toolbelt
     - node012
@@ -47,6 +56,7 @@ dev:
     - wkhtmltopdf
     - sequel-pro
     - robomongo
+    - vmware-fusion
 
   npm_packages:
     - gulp
@@ -58,7 +68,7 @@ dev:
     - name: dnsmasq
       root: true
     - name: httpd24
-      root: false
+      root: true
     - name: mysql56
       root: false
     - name: elasticsearch17

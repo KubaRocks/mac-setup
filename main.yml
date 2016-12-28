@@ -16,11 +16,11 @@
       become: yes
       command: brew services restart dnsmasq
     - name: restart mysql
-      command: brew services restart homebrew/versions/mysql56
+      command: brew services restart mysql56
     - name: restart redis
       command: brew services restart redis
     - name: restart elasticsearch
-      command: brew services restart homebrew/versions/elasticsearch17
+      command: brew services restart elasticsearch17
 
   tasks:
     - include: tasks/install.yml
