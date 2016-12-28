@@ -18,6 +18,14 @@ $ curl -L https://raw.githubusercontent.com/genjusz/mac-setup/master/bootstrap.s
 - [x] ensure services are running
 - [ ] improve merging `vars` from `dev.yml` and `personal.yml`
 - [ ] dotfiles
+- [ ] `FK_StandardViewSettings:IconViewSettings` errors
+
+```
+Set: Entry, ":FK_StandardViewSettings:IconViewSettings:showItemInfo", Does Not Exist
+Set: Entry, ":FK_StandardViewSettings:IconViewSettings:arrangeBy", Does Not Exist
+Set: Entry, ":FK_StandardViewSettings:IconViewSettings:gridSpacing", Does Not Exist
+Set: Entry, ":FK_StandardViewSettings:IconViewSettings:iconSize", Does Not Exist
+```
 
 ## Apps available via App Store
 

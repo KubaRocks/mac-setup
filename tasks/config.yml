@@ -56,14 +56,13 @@
 - name: Remove PHP modules
   lineinfile:
     dest: /usr/local/etc/apache2/2.4/httpd.conf
-    regexp: "^#?LoadModule php[5|7]_module    /usr/local/opt/{{ item }}/libexec/apache2/libphp[5|7].so"
+    regexp: "^#?LoadModule php[5|7]_module*"
     state: absent
-  with_items: "{{ dev.php_versions }}"
 
 - name: Add PHP 5 module
   lineinfile:
     dest: /usr/local/etc/apache2/2.4/httpd.conf
-    regexp: "LoadModule php5_module"
+    regexp: "^LoadModule php5_module /usr/local/lib/libphp5.so"
     insertafter: "^LoadModule rewrite_module libexec/mod_rewrite.so"
     line: "LoadModule php5_module /usr/local/lib/libphp5.so"
     state: present
@@ -71,18 +70,22 @@
 - name: Add PHP 7 module
   lineinfile:
     dest: /usr/local/etc/apache2/2.4/httpd.conf
-    regexp: "LoadModule php7_module"
+    regexp: "^#LoadModule php7_module /usr/local/lib/libphp7.so"
     insertafter: "^LoadModule php5_module /usr/local/lib/libphp5.so"
     line: "#LoadModule php7_module /usr/local/lib/libphp7.so"
     state: present
 
 - name: Add apache vhosts configuration
-  become: yes
   template:
     src: "vhosts.conf.j2"
     dest: "/usr/local/etc/apache2/2.4/extra/httpd-vhosts.conf"
-    owner: root
-    group: wheel
+    mode: 0644
+  notify: restart apache
+
+- name: Add apache php handler
+  template:
+    src: "php.conf.j2"
+    dest: "/usr/local/etc/apache2/2.4/extra/httpd-php.conf"
     mode: 0644
   notify: restart apache
 
