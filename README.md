@@ -64,7 +64,7 @@ $ sphp 71
 
 Running example:
 
-[![PHP version switcher](http://drop.abneg.at/Screen-Recording-2016-12-28-13-01-50.gif)](http://drop.abneg.at/Screen-Recording-2016-12-28-13-01-50.gif)
+[![PHP version switcher](docs/images/php-switcher-in-action.gif)](docs/images/php-switcher-in-action.gif)
 
 ## Tips & Tricks
 
