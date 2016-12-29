@@ -1,5 +1,7 @@
 # Mac setup with Ansible
 
+[![Build Status](https://travis-ci.org/genjusz/mac-setup.svg?branch=master)](https://travis-ci.org/genjusz/mac-setup)
+
 This repo contains Ansible playbooks that install and configure software I use on daily basis.
 
 One-liner to rule them all ! ! !
