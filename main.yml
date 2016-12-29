@@ -2,6 +2,10 @@
 - hosts: local
   connection: local
 
+  roles:
+    - name: geerlingguy.mas
+      when: mas_installed_app_ids
+
   vars_files:
     - vars/dev.yml
     - vars/apache.yml
@@ -21,6 +25,11 @@
       command: brew services restart redis
     - name: restart elasticsearch
       command: brew services restart elasticsearch17
+
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - vars/override.yml
 
   tasks:
     - include: tasks/install.yml

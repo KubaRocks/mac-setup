@@ -44,3 +44,15 @@ personal:
 
   npm_packages: []
   gem_packages: []
+
+mas_installed_app_ids:
+  - 557168941 # Tweetbot
+  - 425264550 # Blackmagic Disk Speed Test (3.0)
+  - 671736912 # FruitJuice
+  - 426410278 # Flexiglass
+  - 451444120 # Memory Clean
+  - 568494494 # Pocket
+  - 514951692 # NetSpot
+
+mas_email: ""
+mas_password: ""

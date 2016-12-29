@@ -55,6 +55,11 @@ fi
 
 cd $ANSIBLE_CONFIGURATION_DIRECTORY
 git pull
+
+# Install ansible requirements
+ansible-galaxy install -r requirements.yml
+
+# run provisioning
 ansible-playbook main.yml -u $(whoami) --ask-sudo-pass
 
 read -p "Do You wish to configure macOS now ? [yN] " configureMacOS
