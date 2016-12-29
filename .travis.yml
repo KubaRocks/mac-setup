@@ -12,7 +12,10 @@ install:
   - sudo pip install ansible
 
   # Add ansible.cfg to pick up roles path.
-  - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
+  # - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
+
+  # do not test Mac App Store Apps install
+  - "{ echo 'mas_installed_app_ids:[]'} >> vars/override.yml"
 
   # Add a hosts file.
   - sudo mkdir -p /etc/ansible
