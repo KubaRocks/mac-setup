@@ -19,6 +19,7 @@ dev:
 
   homebrew_taps:
     - caskroom/cask
+    - caskroom/fonts
     - homebrew/apache
     - homebrew/php
     - homebrew/versions
@@ -57,6 +58,7 @@ dev:
     - sequel-pro
     - robomongo
     - vmware-fusion
+    - font-fira-code
 
   npm_packages:
     - gulp
