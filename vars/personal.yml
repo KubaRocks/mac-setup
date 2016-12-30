@@ -2,57 +2,64 @@
 personal:
   homebrew_taps: []
   homebrew_packages:
-    - mongodb
-    - httpie
-    - ffmpeg
-    - ngrep
-    - coreutils
     - bash-completion2
+    - coreutils
+    - ffmpeg
+    - httpie
+    - mongodb
+    - ngrep
     - speedtest_cli
     - thefuck
 
   homebrew_cask_apps:
     - 1password
     - adobe-creative-cloud
+    # - alfred
     - bartender
     - caffeine
+    - charles
     # - cleanmymac    // install via setapp
     # - coderunner    // install via setapp
     - daisydisk
     - dropbox
+    - dropshare
     - evernote
     - fantastical
     - flash-player
     - fing
     - geekbench
+    - keka
+    - kodi
+    - logitech-unifying
     - macdown
     - paw
     - skitch
     - spotify
     - timemachineeditor
-    # - totalterminal
+    - tower
     - transmit
     - tunnelblick
-    - keka
-    - kodi
-    - logitech-unifying
+    - vlc
+    ## Quick Look plugins
+    - betterzipql
     - qlmarkdown
-    - dropshare
-    # - licecap
-    # - vlc
-    # - alfred
+    - qlcolorcode
+    - qlstephen
+    - quicklook-json
+    - quicknfo
+    - suspicious-package
+    - webpquicklook
 
   npm_packages: []
   gem_packages: []
 
 mas_installed_app_ids:
-  - 557168941 # Tweetbot
   - 425264550 # Blackmagic Disk Speed Test (3.0)
-  - 671736912 # FruitJuice
   - 426410278 # Flexiglass
+  - 671736912 # FruitJuice
   - 451444120 # Memory Clean
   - 568494494 # Pocket
-  - 514951692 # NetSpot
+  - 557168941 # Tweetbot
 
 mas_email: ""
 mas_password: ""
