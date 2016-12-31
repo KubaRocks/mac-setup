@@ -61,6 +61,7 @@
 - name: Install apps via `brew cask`
   homebrew_cask: name="{{ item }}" # install_options="appdir={{ homebrew_cask_appdir }}"
   with_items: "{{ dev.homebrew_cask_apps + personal.homebrew_cask_apps }}"
+  when: install_casks
 
 - name: Install configured homebrew packages
   homebrew: name={{ item }} state=latest

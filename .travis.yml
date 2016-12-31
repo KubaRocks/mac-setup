@@ -4,10 +4,6 @@ language: objective-c
 # 10.12 (see https://docs.travis-ci.com/user/osx-ci-environment/#OS-X-Version)
 osx_image: xcode8.1
 
-cache:
-  directories:
-    - $HOME/Library/Caches/Homebrew
-
 install:
   # Install ruby
   - brew install ruby
@@ -34,4 +30,4 @@ script:
   - "ansible-playbook main.yml --syntax-check"
 
   # Test the playbook.
-  - "travis_wait 90 ansible-playbook main.yml -u $(whoami)"
+  - "travis_wait 60 --extra-vars '{\"install_casks\":\"false\"}' ansible-playbook main.yml -u $(whoami) "
