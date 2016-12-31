@@ -1,6 +1,6 @@
 ---
 homebrew_cask_appdir: /Applications
-install_casks: yes
+install_cask_apps: yes
 dev:
   php_versions:
     - php55

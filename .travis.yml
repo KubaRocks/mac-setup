@@ -17,6 +17,9 @@ install:
   # do not test Mac App Store Apps install
   - "echo 'mas_installed_app_ids: []' > vars/override.yml"
 
+  # do not test cask apps install
+  - "echo 'install_cask_apps: false' >> vars/override.yml"
+
   # Add a hosts file.
   - sudo mkdir -p /etc/ansible
   - sudo touch /etc/ansible/hosts
@@ -30,4 +33,4 @@ script:
   - "ansible-playbook main.yml --syntax-check"
 
   # Test the playbook.
-  - "travis_wait 60 ansible-playbook --extra-vars '{\"install_casks\":\"false\"}' main.yml -u $(whoami) "
+  - "travis_wait 60 ansible-playbook main.yml -u $(whoami) "
