@@ -33,4 +33,4 @@ script:
   - "ansible-playbook main.yml --syntax-check"
 
   # Test the playbook.
-  - "travis_wait 60 ansible-playbook main.yml -u $(whoami) "
+  - "ansible-playbook main.yml -u $(whoami) "
