@@ -30,4 +30,4 @@ script:
   - "ansible-playbook main.yml --syntax-check"
 
   # Test the playbook.
-  - "travis_wait 60 --extra-vars '{\"install_casks\":\"false\"}' ansible-playbook main.yml -u $(whoami) "
+  - "travis_wait 60 ansible-playbook --extra-vars '{\"install_casks\":\"false\"}' main.yml -u $(whoami) "
