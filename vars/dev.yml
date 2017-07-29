@@ -37,7 +37,7 @@ dev:
     - mysql56
     - composer
     - imagemagick
-    - elasticsearch17
+    - elasticsearch
     - heroku-toolbelt
     - node
     - nvm
@@ -76,7 +76,7 @@ dev:
       root: true
     - name: mysql56
       root: false
-    - name: elasticsearch17
+    - name: elasticsearch
       root: false
     - name: redis
       root: false
