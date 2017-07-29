@@ -1,6 +1,8 @@
 ---
 personal:
-  homebrew_taps: []
+  homebrew_taps:
+    - caskroom/drivers
+
   homebrew_packages:
     - bash-completion2
     - coreutils
