@@ -1,6 +1,8 @@
 ---
 personal:
-  homebrew_taps: []
+  homebrew_taps:
+    - caskroom/drivers
+
   homebrew_packages:
     - bash-completion2
     - coreutils
@@ -14,23 +16,22 @@ personal:
   homebrew_cask_apps:
     - 1password
     - adobe-creative-cloud
-    # - alfred
     - bartender
     - caffeine
     - charles
-    # - cleanmymac    // install via setapp
-    # - coderunner    // install via setapp
+    - cleanmymac
     - daisydisk
     - day-o
     - dropbox
     - dropshare
     - evernote
     - flash-player
+    # - fantastical
     - fing
     - geekbench
     - keka
     - kodi
-    - logitech-unifying
+    - logitech-options
     - macdown
     - paw
     - skitch
@@ -53,14 +54,13 @@ personal:
   npm_packages: []
   gem_packages: []
 
-mas_installed_app_ids:
-  - 425264550 # Blackmagic Disk Speed Test (3.0)
-  - 426410278 # Flexiglass
-  - 671736912 # FruitJuice
-  - 451444120 # Memory Clean
-  - 568494494 # Pocket
-  - 557168941 # Tweetbot
-  - 979047768 # Browserism for Chrome
+mas_installed_apps:
+  - { id: 425264550, name: "Blackmagic Disk Speed Test (3.0)" }
+  - { id: 426410278, name: "Flexiglass" }
+  - { id: 671736912, name: "FruitJuice" }
+  - { id: 451444120, name: "Memory Clean" }
+  - { id: 568494494, name: "Pocket" }
+  - { id: 557168941, name: "Tweetbot" }
 
 mas_email: ""
 mas_password: ""

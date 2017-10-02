@@ -2,32 +2,23 @@
 
 [![Build Status](https://travis-ci.org/genjusz/mac-setup.svg?branch=master)](https://travis-ci.org/genjusz/mac-setup)
 
-This repo contains Ansible playbooks that install and configure software I use on daily basis.
-
-One-liner to rule them all ! ! !
-
 ```bash
 $ curl -L https://raw.githubusercontent.com/genjusz/mac-setup/master/bootstrap.sh | bash
 ```
+This repo contains Ansible playbook that install and configure software I use on daily basis.
+Paste above line into `Terminal.app` and enjoy !
 
 ## TODO
 
 - [x] php config
 - [x] apache config
 - [x] hologram executable
-- [ ] meaningful readme ;)
-- [ ] nvm config (`brew info nvm`)
 - [x] ensure services are running
-- [ ] improve merging `vars` from `dev.yml` and `personal.yml`
-- [ ] dotfiles
-- [ ] `FK_StandardViewSettings:IconViewSettings` errors
-
-```
-Set: Entry, ":FK_StandardViewSettings:IconViewSettings:showItemInfo", Does Not Exist
-Set: Entry, ":FK_StandardViewSettings:IconViewSettings:arrangeBy", Does Not Exist
-Set: Entry, ":FK_StandardViewSettings:IconViewSettings:gridSpacing", Does Not Exist
-Set: Entry, ":FK_StandardViewSettings:IconViewSettings:iconSize", Does Not Exist
-```
+- [x] fix `FK_StandardViewSettings:IconViewSettings` errors in `macos-setup.sh`
+- [ ] meaningful readme ;)
+- [ ] split playbooks into couple of files so `travis-ci` can build it ...
+- [ ] seperate playbooks for cask apps and services
+- [ ] update and add links to apps in README
 
 ## Apps available via App Store
 
