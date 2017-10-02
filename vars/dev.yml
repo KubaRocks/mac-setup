@@ -22,7 +22,7 @@ dev:
   homebrew_taps:
     - caskroom/cask
     - caskroom/fonts
-    - homebrew/php
+    - homebrew/homebrew-php
     - homebrew/versions
     - homebrew/services
 
