@@ -43,6 +43,9 @@ dev:
     - nvm
     - dnsmasq
     - homebrew/dupes/rsync
+    - symfony-installer
+    - yarn
+    - most
 
   homebrew_cask_apps:
     - atom

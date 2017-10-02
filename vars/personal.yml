@@ -21,10 +21,10 @@ personal:
     # - cleanmymac    // install via setapp
     # - coderunner    // install via setapp
     - daisydisk
+    - day-o
     - dropbox
     - dropshare
     - evernote
-    - fantastical
     - flash-player
     - fing
     - geekbench
@@ -60,6 +60,7 @@ mas_installed_app_ids:
   - 451444120 # Memory Clean
   - 568494494 # Pocket
   - 557168941 # Tweetbot
+  - 979047768 # Browserism for Chrome
 
 mas_email: ""
 mas_password: ""
