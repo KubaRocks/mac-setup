@@ -39,14 +39,14 @@
 
 - name: Ensure Virtual Hosts directory exists
   file:
-    path: /usr/local/etc/apache2/2.4/vhosts
+    path: /usr/local/etc/httpd/vhosts
     state: directory
     follow: yes
 
 - name: Configure Apache
   become: yes
   lineinfile:
-    dest: /usr/local/etc/apache2/2.4/httpd.conf
+    dest: /usr/local/etc/httpd/httpd.conf
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
     state: present
@@ -55,13 +55,13 @@
 
 - name: Remove PHP modules
   lineinfile:
-    dest: /usr/local/etc/apache2/2.4/httpd.conf
+    dest: /usr/local/etc/httpd/httpd.conf
     regexp: "^#?LoadModule php[5|7]_module*"
     state: absent
 
 - name: Add PHP 5 module
   lineinfile:
-    dest: /usr/local/etc/apache2/2.4/httpd.conf
+    dest: /usr/local/etc/httpd/httpd.conf
     regexp: "^LoadModule php5_module /usr/local/lib/libphp5.so"
     insertafter: "^LoadModule rewrite_module libexec/mod_rewrite.so"
     line: "LoadModule php5_module /usr/local/lib/libphp5.so"
@@ -69,7 +69,7 @@
 
 - name: Add PHP 7 module
   lineinfile:
-    dest: /usr/local/etc/apache2/2.4/httpd.conf
+    dest: /usr/local/etc/httpd/httpd.conf
     regexp: "^#LoadModule php7_module /usr/local/lib/libphp7.so"
     insertafter: "^LoadModule php5_module /usr/local/lib/libphp5.so"
     line: "#LoadModule php7_module /usr/local/lib/libphp7.so"
@@ -78,25 +78,25 @@
 - name: Add apache vhosts configuration
   template:
     src: "vhosts.conf.j2"
-    dest: "/usr/local/etc/apache2/2.4/extra/httpd-vhosts.conf"
+    dest: "/usr/local/etc/httpd/extra/httpd-vhosts.conf"
     mode: 0644
   notify: restart apache
 
 - name: Apache php handler config file
   template:
     src: "php.conf.j2"
-    dest: "/usr/local/etc/apache2/2.4/extra/httpd-php.conf"
+    dest: "/usr/local/etc/httpd/extra/httpd-php.conf"
     mode: 0644
   notify: restart apache
 
 - name: Add apache php handler
   blockinfile:
-    dest: /usr/local/etc/apache2/2.4/httpd.conf
+    dest: /usr/local/etc/httpd/httpd.conf
     state: present
-    insertafter: "#Include /usr/local/etc/apache2/2.4/extra/httpd-default.conf"
+    insertafter: "#Include /usr/local/etc/httpd/extra/httpd-default.conf"
     block: |
       # PHP handler
-      Include /usr/local/etc/apache2/2.4/extra/httpd-php.conf
+      Include /usr/local/etc/httpd/extra/httpd-php.conf
 
 ################################################################################
 # PHP config                                                                   #

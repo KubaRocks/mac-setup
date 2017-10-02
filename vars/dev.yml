@@ -17,11 +17,11 @@ dev:
     - opcache
     - apcu
     - yaml
+    - igbinary
 
   homebrew_taps:
     - caskroom/cask
     - caskroom/fonts
-    - homebrew/apache
     - homebrew/php
     - homebrew/versions
     - homebrew/services
@@ -75,7 +75,7 @@ dev:
   services:
     - name: dnsmasq
       root: true
-    - name: httpd24
+    - name: httpd
       root: true
     - name: mysql56
       root: false

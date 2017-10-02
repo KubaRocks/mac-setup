@@ -2,20 +2,21 @@
 - hosts: local
   connection: local
 
-  roles:
-    - name: geerlingguy.mas
-      when: mas_installed_apps
-
   vars_files:
     - vars/dev.yml
     - vars/apache.yml
     - vars/php.yml
     - vars/personal.yml
+    - vars/mac_apple_store.yml
+
+  roles:
+    - name: geerlingguy.mas
+      when: mas_installed_apps
 
   handlers:
     - name: restart apache
       become: yes
-      command: brew services restart httpd24
+      command: brew services restart httpd
     - name: restart dnsmasq
       become: yes
       command: brew services restart dnsmasq

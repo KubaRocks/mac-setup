@@ -15,7 +15,7 @@ install:
   # - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
 
   # do not test Mac App Store Apps install
-  - "echo 'mas_installed_app_ids: []' > vars/override.yml"
+  - "echo 'mas_installed_apps: []' > vars/override.yml"
 
   # do not test cask apps install
   - "echo 'install_cask_apps: false' >> vars/override.yml"
