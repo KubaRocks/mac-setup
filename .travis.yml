@@ -30,7 +30,11 @@ script:
   - "ansible-galaxy install -r requirements.yml"
 
   # Check the role/playbook's syntax.
+  - "ansible-playbook playbooks/apache.yml --syntax-check"
+  - "ansible-playbook playbooks/php.yml --syntax-check"
   - "ansible-playbook main.yml --syntax-check"
 
   # Test the playbook.
+  - "ansible-playbook playbooks/apache.yml -u $(whoami) "
+  - "ansible-playbook playbooks/php.yml -u $(whoami) "
   - "ansible-playbook main.yml -u $(whoami) "

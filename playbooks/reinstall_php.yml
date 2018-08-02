@@ -3,18 +3,18 @@
   connection: local
 
   vars_files:
-    - vars/dev.yml
+    - ../vars/dev.yml
 
   tasks:
     - name: Reinstall php versions
-      shell: "brew reinstall {{ item }} --with-httpd24 --build-from-source; brew unlink {{ item }};"
-      with_items: "{{ dev.php_versions }}"
+      shell: "brew reinstall {{ item }}; brew unlink {{ item }};"
+      with_items: "{{ php_versions }}"
 
-    - name: Reinstall php extensions
-      shell: "brew link {{ item[0] }}; brew reinstall {{ item[0] ~ '-' ~ item[1] }} --build-from-source; brew unlink {{ item[0] }};"
-      with_nested:
-        - "{{ dev.php_versions }}"
-        - "{{ dev.php_extensions }}"
+    # - name: Reinstall php extensions
+    #   shell: "brew link {{ item[0] }}; brew reinstall {{ item[0] ~ '-' ~ item[1] }} --build-from-source; brew unlink {{ item[0] }};"
+    #   with_nested:
+    #     - "{{ php_versions }}"
+    #     - "{{ php_extensions }}"
 
     - name: Remove PHP modules
       lineinfile:
@@ -37,3 +37,4 @@
         insertafter: "^LoadModule php5_module /usr/local/lib/libphp5.so"
         line: "#LoadModule php7_module /usr/local/lib/libphp7.so"
         state: present
+    - name: add sphp script

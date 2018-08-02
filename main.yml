@@ -3,10 +3,12 @@
   connection: local
 
   vars_files:
-    - vars/dev.yml
+    - vars/brew/taps.yml
+    - vars/brew/brew.yml
+    - vars/brew/cask.yml
+    - vars/brew/services.yml
     - vars/apache.yml
     - vars/php.yml
-    - vars/personal.yml
     - vars/mac_apple_store.yml
 
   roles:
@@ -21,11 +23,11 @@
       become: yes
       command: brew services restart dnsmasq
     - name: restart mysql
-      command: brew services restart mysql56
+      command: brew services restart mysql@5.7
     - name: restart redis
       command: brew services restart redis
     - name: restart elasticsearch
-      command: brew services restart elasticsearch17
+      command: brew services restart elasticsearch@5.6
 
   pre_tasks:
     - include_vars: "{{ item }}"

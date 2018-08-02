@@ -1,0 +1,9 @@
+homebrew_taps:
+  - homebrew/cask
+  - homebrew/cask-drivers
+  - homebrew/cask-fonts
+  - homebrew/cask-versions
+  - homebrew/versions
+  - homebrew/services
+  - heroku/brew
+  - homebrew/dupes

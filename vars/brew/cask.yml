@@ -1,0 +1,61 @@
+# to switch off when building in travis
+install_cask_apps: true
+
+homebrew_cask_apps:
+  - 1password
+  - atom
+  - adobe-creative-cloud
+  - bartender
+  - caffeine
+  - charles
+  - cleanmymac
+  - cocoarestclient
+  - daisydisk
+  - day-o
+  - docker
+  - dropbox
+  - dropshare
+  - evernote
+  - firefox
+  - font-fira-code
+  - geekbench
+  - google-chrome
+  - iterm2
+  - java
+  - keepassx
+  - keka
+  - kodi
+  - logitech-options
+  - macdown
+  - paw
+  - phpstorm
+  - robo-3t
+  - rocket
+  - sequel-pro
+  - skitch
+  - skype
+  - slack
+  - spotify
+  - toggl
+  - tower
+  - transmit
+  - tripmode
+  - tunnelblick
+  - twitch
+  - unetbootin
+  - vagrant
+  - virtualbox
+  - vlc
+  - vmware-fusion
+  - wacom-intuos-tablet
+  - wkhtmltopdf
+
+  ## Quick Look plugins
+  - betterzipql
+  - qlmarkdown
+  - qlcolorcode
+  - qlstephen
+  - quicklook-json
+  - quicknfo
+  - suspicious-package
+  - webpquicklook
