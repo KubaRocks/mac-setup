@@ -8,6 +8,7 @@ homebrew_cask_apps:
   - bartender
   - caffeine
   - charles
+  - chromedriver
   - cleanmymac
   - cocoarestclient
   - daisydisk
