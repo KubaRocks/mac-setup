@@ -4,7 +4,6 @@ homebrew_packages:
   - azure-cli
   - bash
   - bash-completion2
-  - chromedriver
   - composer
   - coreutils
   - curl
