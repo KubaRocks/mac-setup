@@ -16,17 +16,25 @@
         creates: "/usr/local/opt/{{ item.name }}/"
       with_items: "{{ php_versions }}"
 
+    - name: Register extension directories
+      shell: |
+        brew link --force --overwrite {{ item.name }} > /dev/null 2>&1
+        pecl config-get ext_dir
+      register: "ext_dirs"
+      with_items: "{{ php_versions }}"
+
     - name: Install php extensions
       shell: |
-          brew link --force --overwrite {{ item[0].name }};
-          pecl uninstall -r {{ item[1].name }};
-          pecl install {{ item[1].name }}{% if item[0].legacy %}{{ item[1].legacy }}{% endif %};
-          brew unlink {{ item[0].name }};
+          brew link --force --overwrite {{ item[0].name }}
+          pecl uninstall -r {{ item[1].name }}
+          pecl install {{ item[1].name }}{% if item[0].legacy %}{{ item[1].legacy }}{% endif %}
+          brew unlink {{ item[0].name }}
       args:
-        creates: "/usr/local/lib/php/pecl/{{ item[0].ext_dir }}/{{ item[1].name }}.so"
+        creates: "{{ item[2].stdout }}/{{ item[1].name }}.so"
       with_nested:
         - "{{ php_versions }}"
         - "{{ php_extensions }}"
+        - "{{ ext_dirs.results }}"
 
     - name: Switch PHP script
       shell: "curl -L https://gist.githubusercontent.com/rhukster/f4c04f1bf59e0b74e335ee5d186a98e2/raw > /usr/local/bin/sphp;"

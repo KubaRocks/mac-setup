@@ -2,15 +2,12 @@
 php_versions:
   - name: php@5.6
     legacy: true
-    ext_dir: 20131226
     version: 5.6
   - name: php@7.1
     legacy: false
-    ext_dir: 20160303
     version: 7.1
   - name: php@7.2
     legacy: false
-    ext_dir: 20170718
     version: 7.2
 
 php_extensions:
