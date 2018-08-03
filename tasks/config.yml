@@ -25,7 +25,6 @@
     line: address=/.loc/127.0.0.1
     create: yes
     dest: /usr/local/etc/dnsmasq.conf
-  notify: restart dnsmasq
 
 ################################################################################
 # nvm config                                                                   #
@@ -54,5 +53,5 @@
 - name: Start services
   command: brew services start {{ item.name }}
   become: "{{ item.root }}"
-  with_items: "{{ dev.services }}"
+  with_items: "{{ services }}"
   when: "'{{ item.name }}' not in running_services_list.stdout"
