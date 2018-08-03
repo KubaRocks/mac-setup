@@ -14,8 +14,8 @@
   ServerName loc
   ServerAlias *.loc
 
-  CustomLog /var/log/apache2/loc.access_log vcommon
-  ErrorLog /var/log/apache2/loc.error_log
+  CustomLog /usr/local/var/log/httpd/loc.access_log vcommon
+  ErrorLog /usr/local/var/log/httpd/loc.error_log
   VirtualDocumentRoot /Users/{{ ansible_ssh_user|default(lookup('env', 'USER')) }}/Sites/%-2.0.%-1.0/web/
 
   LogFormat "%{Host}i %l %u %t \"%r\" %>s %b" vcommon

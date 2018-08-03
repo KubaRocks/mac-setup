@@ -13,11 +13,12 @@ homebrew_cask_apps:
   - cocoarestclient
   - daisydisk
   - day-o
+  - discord
   - docker
   - dropbox
   - dropshare
   - evernote
-  - firefox
+  - firefox-developer-edition
   - font-fira-code
   - geekbench
   - google-chrome

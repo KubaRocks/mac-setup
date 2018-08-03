@@ -19,7 +19,7 @@ homebrew_packages:
   - mongodb
   - most
   - node
-  # - nvm
+  - nvm
   - ngrep
   - pv
   - redis

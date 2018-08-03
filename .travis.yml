@@ -2,23 +2,22 @@
 sudo: required
 language: objective-c
 # 10.12 (see https://docs.travis-ci.com/user/osx-ci-environment/#OS-X-Version)
-osx_image: xcode9.2
-osx_image: xcode9.4
+os: osx
+osx_image:
+  - xcode9.2
+  - xcode9.4
+
+before_install:
+  - brew update
 
 install:
-  # Install ruby
-  - brew install ruby
-
   # Install Ansible.
   - brew install ansible
-
-  # Add ansible.cfg to pick up roles path.
-  # - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
 
   # do not test Mac App Store Apps install
   - "echo 'mas_installed_apps: []' > vars/override.yml"
 
-  # do not test cask apps install
+  # do not test cask apps install, only java for elasticsearch
   - "echo 'homebrew_cask_apps: [java8]' >> vars/override.yml"
 
   # Add a hosts file.

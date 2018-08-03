@@ -30,16 +30,27 @@
 # nvm config                                                                   #
 ################################################################################
 
-# - name: Create ~/.nvm directory
-#   file:
-#     path: ~/.nvm
-#     state: directory
-#
-# - name: Add symbolic link to nvm.sh
-#   file:
-#     src: /usr/local/opt/nvm/nvm.sh
-#     dest: ~/.nvm/nvm.sh
-#     state: link
+- name: Create ~/.nvm directory
+  file:
+    path: ~/.nvm
+    state: directory
+
+- name: Ensure ~/.bash_profile exists
+  file:
+    path: ~/.bash_profile
+    state: touch
+
+- name: Add NVM_DIR var to .bash_profile
+  lineinfile:
+    dest: ~/.bash_profile
+    line: 'export NVM_DIR="$HOME/.nvm"'
+    state: present
+
+- name: Add nvm.sh to .bash_profile
+  lineinfile:
+    dest: ~/.bash_profile
+    line: '. "$(brew --prefix nvm)/nvm.sh"'
+    state: present
 
 ################################################################################
 # services                                                                     #
