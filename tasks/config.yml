@@ -55,3 +55,4 @@
   become: "{{ item.root }}"
   with_items: "{{ services }}"
   when: "'{{ item.name }}' not in running_services_list.stdout"
+  ignore_errors: true
