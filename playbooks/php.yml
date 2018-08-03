@@ -17,19 +17,13 @@
       with_items: "{{ php_versions }}"
 
     - name: Install php extensions
-      shell: "brew link --force --overwrite {{ item[0].name }}; pecl uninstall -r {{ item[1].name }}; pecl install {{ item[1].name }}; brew unlink {{ item[0].name }};"
+      shell: |
+          brew link --force --overwrite {{ item[0].name }};
+          pecl uninstall -r {{ item[1].name }};
+          pecl install {{ item[1].name }}{% if item[0].legacy %}{{ item[1].legacy }}{% endif %};
+          brew unlink {{ item[0].name }};
       args:
         creates: "/usr/local/lib/php/pecl/{{ item[0].ext_dir }}/{{ item[1].name }}.so"
-      when: not item[0].legacy
-      with_nested:
-        - "{{ php_versions }}"
-        - "{{ php_extensions }}"
-
-    - name: Install legacy php extensions
-      shell: "brew link --force --overwrite {{ item[0].name }}; pecl uninstall -r {{ item[1].name }}; pecl install {{ item[1].name ~ item[1].legacy }}; brew unlink {{ item[0].name }};"
-      args:
-        creates: "/usr/local/lib/php/pecl/{{ item[0].ext_dir }}/{{ item[1].name }}.so"
-      when: item[0].legacy
       with_nested:
         - "{{ php_versions }}"
         - "{{ php_extensions }}"

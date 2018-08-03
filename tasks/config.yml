@@ -31,16 +31,16 @@
 # nvm config                                                                   #
 ################################################################################
 
-- name: Create ~/.nvm directory
-  file:
-    path: ~/.nvm
-    state: directory
-
-- name: Add symbolic link to nvm.sh
-  file:
-    src: /usr/local/opt/nvm/nvm.sh
-    dest: ~/.nvm/nvm.sh
-    state: link
+# - name: Create ~/.nvm directory
+#   file:
+#     path: ~/.nvm
+#     state: directory
+#
+# - name: Add symbolic link to nvm.sh
+#   file:
+#     src: /usr/local/opt/nvm/nvm.sh
+#     dest: ~/.nvm/nvm.sh
+#     state: link
 
 ################################################################################
 # services                                                                     #
