@@ -16,7 +16,7 @@
         creates: "/usr/local/opt/{{ item.name }}/"
       with_items: "{{ php_versions }}"
       loop_control:
-        label: "install PHP {{ item.version }}"
+        label: "Installing PHP {{ item.version }}"
 
     - name: Register extension directories
       shell: |
@@ -25,7 +25,7 @@
       register: "ext_dirs"
       with_items: "{{ php_versions }}"
       loop_control:
-        label: "Register PECL extension dir for PHP {{ item.version }}"
+        label: "Registering PECL extension dir for PHP {{ item.version }}"
 
     - name: Install php extensions
       shell: |
@@ -40,7 +40,7 @@
         - "{{ php_extensions }}"
         - "{{ ext_dirs.results }}"
       loop_control:
-        label: "installed {{ item[1].name }}{% if item[0].legacy %}{{ item[1].legacy }}{% endif %} for {{ item[0].name }}"
+        label: "Installing {{ item[1].name }}{% if item[0].legacy %}{{ item[1].legacy }}{% endif %} for {{ item[0].name }}"
 
     - name: Switch PHP script
       shell: "curl -L https://gist.githubusercontent.com/rhukster/f4c04f1bf59e0b74e335ee5d186a98e2/raw > /usr/local/bin/sphp;"
@@ -66,7 +66,7 @@
         - "{{ php_configuration_items }}"
         - "{{ php_versions }}"
       loop_control:
-        label: "Set [{{ item[0].section }}] {{ item[0].option }} to {{ item[0].value }} for PHP {{ item[1].version }}"
+        label: "Setting [{{ item[0].section }}] {{ item[0].option }} to {{ item[0].value }} for PHP {{ item[1].version }}"
 
     - name: Cleanup php.ini files
       lineinfile:
@@ -75,7 +75,7 @@
         state: absent
       with_items: "{{ php_versions }}"
       loop_control:
-        label: "Cleanup PHP {{ item.version }} ini file"
+        label: "Cleaning up PHP {{ item.version }} ini file"
 
     - name: Extensions configuration
       template:
@@ -86,7 +86,7 @@
         - "{{ php_extensions }}"
         - "{{ php_versions }}"
       loop_control:
-        label: "Configure {{ item[0].name }} for PHP {{ item[1].version }}"
+        label: "Configuring {{ item[0].name }} for PHP {{ item[1].version }}"
 
     - name: Switch PHP to version 7.2
       command: "sphp 7.2"
