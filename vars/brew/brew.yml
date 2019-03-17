@@ -6,7 +6,6 @@ homebrew_packages:
   - bat
   - composer
   - coreutils
-  - chromedriver
   - curl
   - dnsmasq
   - elasticsearch@5.6
