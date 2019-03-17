@@ -1,16 +1,16 @@
 ---
 sudo: required
 language: objective-c
-# 10.12 (see https://docs.travis-ci.com/user/osx-ci-environment/#OS-X-Version)
+# 10.13 (see https://docs.travis-ci.com/user/osx-ci-environment/#OS-X-Version)
 os: osx
-osx_image: xcode9.4
+osx_image: xcode10.1
 
 before_install:
   - brew update
 
 install:
   # Install Ansible.
-  - brew install ansible
+  # - brew install ansible
 
   # do not test Mac App Store Apps install
   - "echo 'mas_installed_apps: []' > vars/override.yml"

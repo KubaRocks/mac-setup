@@ -9,8 +9,9 @@ homebrew_cask_apps:
   - caffeine
   - charles
   - chromedriver
-  - cleanmymac
+  #- cleanmymac - install from SetApp
   - cocoarestclient
+  - colorpicker-developer
   - daisydisk
   - day-o
   - discord
@@ -32,9 +33,8 @@ homebrew_cask_apps:
   - paw
   - phpstorm
   - robo-3t
-  - rocket
+  - setapp
   - sequel-pro
-  - skitch
   - skype
   - slack
   - spotify
@@ -47,6 +47,7 @@ homebrew_cask_apps:
   - unetbootin
   - vagrant
   - virtualbox
+  - visual-studio-code
   - vlc
   - vmware-fusion
   - wacom-intuos-tablet

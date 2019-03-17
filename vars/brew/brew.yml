@@ -1,31 +1,39 @@
 ---
 homebrew_packages:
   - autoconf
-  - azure-cli
   - bash
   - bash-completion2
+  - bat
   - composer
   - coreutils
+  - chromedriver
   - curl
   - dnsmasq
   - elasticsearch@5.6
+  - fd
   - ffmpeg
   - fish
-  - heroku-toolbelt
+  - fzf
+  - geckodriver
+  - go
   - htop
   - httpie
   - imagemagick
+  - mas
   - mysql@5.7
   - mongodb
   - most
   - node
+  - ncdu
   - nvm
   - ngrep
+  - prettyping
   - pv
   - redis
   - rsync
   - ssh-copy-id
   - speedtest_cli
+  - tldr
   - thefuck
   - tree
   - wget
