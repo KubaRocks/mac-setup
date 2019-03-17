@@ -10,7 +10,7 @@ before_install:
 
 install:
   # Install Ansible.
-  # - brew install ansible
+  - brew install ansible
 
   # do not test Mac App Store Apps install
   - "echo 'mas_installed_apps: []' > vars/override.yml"
