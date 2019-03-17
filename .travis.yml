@@ -9,8 +9,8 @@ before_install:
   - brew update
 
 install:
-  # Install Ansible.
-  - brew install ansible --force
+  # Install Ansible. no logner necessary as travis image already got it
+  # - brew install ansible --force
 
   # do not test Mac App Store Apps install
   - "echo 'mas_installed_apps: []' > vars/override.yml"
