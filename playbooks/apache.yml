@@ -22,7 +22,6 @@
       homebrew:
         name: httpd
         state: latest
-        install_options: with-privileged-ports, with-http2
 
     ################################################################################
     # Apache config                                                                #
