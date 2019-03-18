@@ -81,11 +81,23 @@ sudo systemsetup -setrestartfreeze on
 # Go into computer sleep mode after 60 minutes
 sudo systemsetup -setcomputersleep 60 > /dev/null
 
-# Disable smart quotes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+# Disable Notification Center and remove the menu bar icon
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Enable dark menu bar and Dock
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
@@ -93,6 +105,9 @@ defaults write NSGlobalDomain AppleInterfaceStyle Dark
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
+
+# Increase sound quality for Bluetooth headphones/headsets
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -146,12 +161,20 @@ defaults write com.apple.screencapture disable-shadow -bool true
 # Enable subpixel font rendering on non-Apple LCDs
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
+# Enable HiDPI display modes (requires restart)
+sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
+
+# Set Home as the default location for new Finder windows
+# For other paths, use `PfLo` and `file:///full/path/here/`
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -253,6 +276,12 @@ defaults write com.apple.dock mouse-over-hilite-stack -bool true
 # Set the icon size of Dock items to 55px and 94px on hover
 defaults write com.apple.dock tilesize -int 55
 defaults write com.apple.dock largesize -int 94
+
+# Change minimize/maximize window effect
+defaults write com.apple.dock mineffect -string "scale"
+
+# Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool true
 
 # Change Dock show / hide / hover effects
 defaults write com.apple.dock mineffect -string "genie"
