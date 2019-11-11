@@ -9,8 +9,8 @@ before_install:
   - brew update
 
 install:
-  # Install Ansible. no logner necessary as travis image already got it
-  # - brew install ansible --force
+  # Install Ansible 2.7.x
+  - pip3 install 'ansible>=2.7.0,<2.8.0'
 
   # do not test Mac App Store Apps install
   - "echo 'mas_installed_apps: []' > vars/override.yml"
@@ -28,11 +28,11 @@ script:
   - "ansible-galaxy install -r requirements.yml"
 
   # Check the role/playbook's syntax.
-  - "ansible-playbook playbooks/apache.yml --syntax-check"
+  # - "ansible-playbook playbooks/apache.yml --syntax-check"
   - "ansible-playbook playbooks/php.yml --syntax-check"
   - "ansible-playbook main.yml --syntax-check"
 
   # Test the playbook.
-  - "ansible-playbook playbooks/apache.yml -u $(whoami) "
+  # - "ansible-playbook playbooks/apache.yml -u $(whoami) "
   - "ansible-playbook playbooks/php.yml -u $(whoami) "
   - "ansible-playbook main.yml -u $(whoami) "
