@@ -26,6 +26,7 @@ homebrew_packages:
   - ncdu
   - nvm
   - ngrep
+  - pkg-config
   - prettyping
   - pv
   - redis
