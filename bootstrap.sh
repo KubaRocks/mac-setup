@@ -38,13 +38,13 @@ if [[ `which ruby` != "/usr/local/bin/ruby" ]]; then
     brew link --overwrite ruby
 fi
 
-# Download and install Ansible
+# Download and install Ansible 2.7.x
 if [[ ! -x /usr/local/bin/ansible ]]; then
-    brew install ansible
+    pip3 install 'ansible>=2.7.0,<2.8.0'
 fi
 
-if [[ ! `ansible --version | grep 2.` ]]; then
-    echo "This playbook works with at least Ansible 2.0. Please update."
+if [[ ! `ansible --version | grep 2.7` ]]; then
+    echo "This playbook works with Ansible 2.7. Please install this version."
     exit 1
 fi
 
@@ -60,9 +60,9 @@ git pull
 ansible-galaxy install -r requirements.yml
 
 # run provisioning
-ansible-playbook playbooks/apache.yml -u $(whoami) --ask-become-pass
+# ansible-playbook playbooks/apache.yml -u $(whoami) --ask-sudo
 ansible-playbook playbooks/php.yml -u $(whoami)
-ansible-playbook main.yml -u $(whoami) --ask-become-pass
+ansible-playbook main.yml -u $(whoami) --ask-sudo
 
 read -p "Do You wish to configure macOS now ? [yN] " configureMacOS
 if [[ $configureMacOS == 'y' ]]; then
