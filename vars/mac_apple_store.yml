@@ -1,10 +1,8 @@
 mas_installed_apps:
-  - { id: 425264550, name: "Blackmagic Disk Speed Test (3.0)" }
-  - { id: 426410278, name: "Flexiglass" }
-  - { id: 671736912, name: "FruitJuice" }
-  - { id: 451444120, name: "Memory Clean" }
-  - { id: 568494494, name: "Pocket" }
-  - { id: 557168941, name: "Tweetbot" }
+  - { id: 425264550, name: "Blackmagic Disk Speed Test" }
+  - { id: 1466185689, name: "Blackmagic RAW Speed Test" }
+  - { id: 937984704, name: "Amphetamine" }
+  - { id: 736189492, name: "Notability" }
 
 mas_email: ""
 mas_password: ""

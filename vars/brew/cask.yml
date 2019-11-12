@@ -6,12 +6,10 @@ homebrew_cask_apps:
   - atom
   - adobe-creative-cloud
   - bartender
-  - caffeine
   - charles
   - chromedriver
-  #- cleanmymac - install from SetApp
+  - clover-configurator
   - cocoarestclient
-  - colorpicker-developer
   - daisydisk
   - day-o
   - discord
@@ -26,33 +24,27 @@ homebrew_cask_apps:
   - iterm2
   - java
   - java8
-  - keepassx
   - keka
   - kodi
   - logitech-options
   - macdown
+  - microsoft-teams
   - paw
   - phpstorm
-  - robo-3t
   - setapp
   - sequel-pro
   - skype
   - slack
+  - soundsource
   - spotify
   - toggl
   - tower
   - transmit
   - tripmode
   - tunnelblick
-  - twitch
-  - unetbootin
-  - vagrant
-  - virtualbox
   - visual-studio-code
   - vlc
   - vmware-fusion
-  - wacom-intuos-tablet
-  - wkhtmltopdf
 
   ## Quick Look plugins
   - betterzipql
