@@ -38,6 +38,11 @@ if [[ `which ruby` != "/usr/local/bin/ruby" ]]; then
     brew link --overwrite ruby
 fi
 
+if [[ `which pip3` != "/usr/local/bin/pip3" ]]; then
+    echo "Info   | Install   | python"
+    brew install python3
+fi
+
 # Download and install Ansible 2.7.x
 if [[ ! -x /usr/local/bin/ansible ]]; then
     pip3 install 'ansible>=2.7.0,<2.8.0'
