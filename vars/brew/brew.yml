@@ -2,13 +2,11 @@
 homebrew_packages:
   - autoconf
   - bash
-  - bash-completion2
   - bat
   - composer
   - coreutils
   - curl
   - dnsmasq
-  - elasticsearch@5.6
   - fd
   - ffmpeg
   - fish
@@ -17,12 +15,9 @@ homebrew_packages:
   - go
   - htop
   - httpie
-  - imagemagick
   - mas
-  - mysql@5.7
-  - mongodb
   - most
-  - node
+  - mysql@5.7
   - ncdu
   - nvm
   - ngrep

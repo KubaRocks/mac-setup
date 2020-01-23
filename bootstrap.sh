@@ -60,7 +60,6 @@ git pull
 ansible-galaxy install -r requirements.yml
 
 # run provisioning
-# ansible-playbook playbooks/apache.yml -u $(whoami) --ask-sudo
 ansible-playbook playbooks/php.yml -u $(whoami)
 ansible-playbook main.yml -u $(whoami) --ask-sudo
 

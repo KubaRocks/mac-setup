@@ -3,14 +3,11 @@ install_cask_apps: true
 
 homebrew_cask_apps:
   - 1password
-  - atom
   - adobe-creative-cloud
-  - bartender
   - charles
   - chromedriver
   - clover-configurator
   - cocoarestclient
-  - daisydisk
   - day-o
   - discord
   - docker
@@ -23,7 +20,6 @@ homebrew_cask_apps:
   - google-chrome
   - iterm2
   - java
-  - java8
   - keka
   - kodi
   - logitech-options
@@ -36,9 +32,6 @@ homebrew_cask_apps:
   - skype
   - slack
   - soundsource
-  - spotify
-  - toggl
-  - tower
   - transmit
   - tripmode
   - tunnelblick

@@ -1,0 +1,7 @@
+---
+fisher_packages:
+  - edc/bass
+  - franciscolourenco/done
+  - jethrokuan/z
+  - jorgebucaran/fish-bax
+  - jorgebucaran/fish-nvm

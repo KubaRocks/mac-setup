@@ -15,14 +15,6 @@
       when: mas_installed_apps
       ignore_errors: yes
 
-  handlers:
-    - name: restart mysql
-      command: brew services restart mysql@5.7
-    - name: restart redis
-      command: brew services restart redis
-    - name: restart elasticsearch
-      command: brew services restart elasticsearch@5.6
-
   pre_tasks:
     - include_vars: "{{ item }}"
       with_fileglob:

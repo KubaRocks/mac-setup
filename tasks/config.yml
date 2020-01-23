@@ -49,7 +49,13 @@
 - name: Add nvm.sh to .bash_profile
   lineinfile:
     dest: ~/.bash_profile
-    line: '. "$(brew --prefix nvm)/nvm.sh"'
+    line: '[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm'
+    state: present
+
+- name: Add nvm completition to .bash_profile
+  lineinfile:
+    dest: ~/.bash_profile
+    line: '[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion'
     state: present
 
 ################################################################################

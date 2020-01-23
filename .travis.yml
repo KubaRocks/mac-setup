@@ -1,9 +1,9 @@
 ---
 sudo: required
 language: objective-c
-# 10.13 (see https://docs.travis-ci.com/user/osx-ci-environment/#OS-X-Version)
+# 10.14 (see https://docs.travis-ci.com/user/osx-ci-environment/#OS-X-Version)
 os: osx
-osx_image: xcode10.1
+osx_image: xcode11.3
 
 before_install:
   - brew update

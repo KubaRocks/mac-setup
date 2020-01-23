@@ -1,0 +1,16 @@
+---
+- hosts: local
+  connection: local
+
+  vars_files:
+    - ../vars/fisher.yml
+
+  tasks:
+    - name: Install fisher
+      shell: curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+      args:
+        creates: ~/.config/fish/functions/fisher.fish
+
+    - name: Install fisher deps
+      shell: fisher add {{ item[0] }}
+      with_items: "{{ fisher_packages }}"
