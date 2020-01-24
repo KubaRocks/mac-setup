@@ -45,7 +45,7 @@ fi
 
 # Download and install Ansible 2.7.x
 if [[ ! -x /usr/local/bin/ansible ]]; then
-    pip3 install 'ansible>=2.7.0,<2.8.0'
+    /usr/local/bin/pip3 install 'ansible>=2.7.0,<2.8.0'
 fi
 
 if [[ ! `ansible --version | grep 2.7` ]]; then
