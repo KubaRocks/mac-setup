@@ -96,7 +96,8 @@
 
     - name: Install Symfony CLI
       shell: curl -sS https://get.symfony.com/cli/installer | bash
-      creates: "/usr/local/bin/symfony"
+      args:
+        creates: "/usr/local/bin/symfony"
 
     - name: Install nss
       homebrew: name=nss state=latest
