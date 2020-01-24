@@ -95,15 +95,14 @@
     ################################################################################
 
     - name: Install Symfony CLI
-      command: curl -sS https://get.symfony.com/cli/installer | bash
-      args:
-        creates: "/usr/local/bin/symfony"
+      shell: curl -sS https://get.symfony.com/cli/installer | bash
+      creates: "/usr/local/bin/symfony"
 
     - name: Install nss
       homebrew: name=nss state=latest
 
     - name: Install Symfony Local Server certificate
-      command: symfony server:ca:install
+      shell: symfony server:ca:install
 
     - name: Start Symfony Local Proxy
-      command: symfony local:proxy:start
+      shell: symfony local:proxy:start
