@@ -110,6 +110,8 @@
 
     - name: Install Symfony Local Server certificate
       shell: symfony server:ca:install
+      ignore_errors: yes
 
     - name: Start Symfony Local Proxy
       shell: symfony local:proxy:start
+      ignore_errors: yes
