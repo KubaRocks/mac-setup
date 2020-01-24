@@ -67,6 +67,7 @@ ansible-galaxy install -r requirements.yml
 # run provisioning
 ansible-playbook playbooks/php.yml -u $(whoami)
 ansible-playbook main.yml -u $(whoami) --ask-sudo
+ansible-playbook playbooks/fisher.yml -u $(whoami)
 
 read -p "Do You wish to configure macOS now ? [yN] " configureMacOS
 if [[ $configureMacOS == 'y' ]]; then
