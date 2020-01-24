@@ -103,6 +103,7 @@
       copy:
         src: "{{ lookup('env','HOME') }}/.symfony/bin/symfony"
         dest: /usr/local/bin/symfony
+        mode: u=rwx,g=rx,o=rx
 
     - name: Install nss
       homebrew: name=nss state=latest
