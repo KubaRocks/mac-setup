@@ -88,7 +88,7 @@
         label: "Configuring {{ item[0] }} for PHP {{ item[1].version }}"
 
     - name: Switch PHP to version 7.3
-      command: "sphp 7.3"
+      command: "sphp 7.3 -s"
 
     ################################################################################
     # Symfony CLI                                                                  #
