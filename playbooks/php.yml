@@ -97,7 +97,12 @@
     - name: Install Symfony CLI
       shell: curl -sS https://get.symfony.com/cli/installer | bash
       args:
-        creates: "/usr/local/bin/symfony"
+        creates: "{{ lookup('env','HOME') }}/.symfony/bin/symfony"
+
+    - name: Make Symfony CLI available globally
+      copy:
+        src: "{{ lookup('env','HOME') }}/.symfony/bin/symfony"
+        dest: /usr/local/bin/symfony
 
     - name: Install nss
       homebrew: name=nss state=latest
