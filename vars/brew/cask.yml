@@ -32,7 +32,6 @@ homebrew_cask_apps:
   - skype
   - slack
   - soundsource
-  - transmit
   - tripmode
   - tunnelblick
   - visual-studio-code

@@ -13,4 +13,6 @@
 
     - name: Install fisher deps
       shell: fisher add {{ item[0] }}
+      args:
+        executable: /usr/local/bin/fish
       with_items: "{{ fisher_packages }}"
