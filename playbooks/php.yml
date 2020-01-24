@@ -89,3 +89,21 @@
 
     - name: Switch PHP to version 7.3
       command: "sphp 7.3"
+
+    ################################################################################
+    # Symfony CLI                                                                  #
+    ################################################################################
+
+    - name: Install Symfony CLI
+      command: curl -sS https://get.symfony.com/cli/installer | bash
+      args:
+        creates: "/usr/local/bin/symfony"
+
+    - name: Install nss
+      homebrew: name=nss state=latest
+
+    - name: Install Symfony Local Server certificate
+      command: symfony server:ca:install
+
+    - name: Start Symfony Local Proxy
+      command: symfony local:proxy:start
