@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/genjusz/mac-setup.svg?branch=master)](https://travis-ci.org/genjusz/mac-setup)
 
 ```bash
-$ curl -L https://raw.githubusercontent.com/genjusz/mac-setup/master/bootstrap.sh | bash
+$ curl -L https://raw.githubusercontent.com/KubaRocks/mac-setup/master/bootstrap.sh | bash
 ```
 
 This repo contains Ansible playbook that install and configure software I use on daily basis.
