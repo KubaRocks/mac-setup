@@ -1,9 +1,0 @@
-services:
-  - name: dnsmasq
-    root: true
-  - name: mysql@5.7
-    root: false
-  - name: redis
-    root: false
-  - name: selenium-server-standalone
-    root: false

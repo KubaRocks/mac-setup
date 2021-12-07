@@ -1,5 +1,6 @@
 ---
-- hosts: local
+- name: "Playing fish shell plugins via fisher"
+  hosts: localhost
   connection: local
 
   vars_files:

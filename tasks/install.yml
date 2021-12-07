@@ -1,22 +1,6 @@
 ---
-################################################################################
-# tap repositories                                                             #
-################################################################################
-
-- name: Tap homebrew repositories
-  homebrew_tap: tap={{ item }}
-  with_items: "{{ homebrew_taps }}"
-
-################################################################################
-# software install                                                             #
-################################################################################
-
-- name: Install apps via `brew cask`
-  homebrew_cask: name="{{ item }}"
-  with_items: "{{ homebrew_cask_apps }}"
-  when: install_cask_apps
+- name: Install apps via brew
+  shell: |
+    pwd;
+    brew bundle --file Brewfile;
   ignore_errors: yes
-
-- name: Install configured homebrew packages
-  homebrew: name={{ item }} state=latest
-  with_items: "{{ homebrew_packages }}"

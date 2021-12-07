@@ -1,19 +1,10 @@
 ---
-- hosts: local
+- name: "Playing main macOS setup - apps and services from brew"
+  hosts: localhost
   connection: local
 
   vars_files:
-    - vars/brew/taps.yml
-    - vars/brew/brew.yml
-    - vars/brew/cask.yml
-    - vars/brew/services.yml
     - vars/php.yml
-    - vars/mac_apple_store.yml
-
-  roles:
-    - name: geerlingguy.mas
-      when: mas_installed_apps
-      ignore_errors: yes
 
   pre_tasks:
     - include_vars: "{{ item }}"
@@ -22,4 +13,3 @@
 
   tasks:
     - include: tasks/install.yml
-    - include: tasks/config.yml

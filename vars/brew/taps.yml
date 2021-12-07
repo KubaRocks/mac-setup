@@ -1,8 +1,0 @@
-homebrew_taps:
-  - homebrew/cask
-  - homebrew/cask-drivers
-  - homebrew/cask-fonts
-  - homebrew/cask-versions
-  - homebrew/services
-  - heroku/brew
-  - exolnet/homebrew-deprecated

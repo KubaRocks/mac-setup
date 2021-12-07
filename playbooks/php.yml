@@ -1,48 +1,18 @@
 ---
-- hosts: local
+- name: "Playing PHP versions and extensions"
+  hosts: localhost
   connection: local
 
   vars_files:
     - ../vars/php.yml
-    - ../vars/brew/taps.yml
 
   tasks:
-    ################################################################################
-    # tap repositories                                                             #
-    ################################################################################
-
-    - name: Tap homebrew repositories
-      homebrew_tap: tap={{ item }}
-      with_items: "{{ homebrew_taps }}"
-
     ################################################################################
     # PHP install                                                                  #
     ################################################################################
 
-    - name: Install php versions
-      shell: "brew install {{ item.name }}; brew unlink {{ item.name }};"
-      args:
-        creates: "/usr/local/opt/{{ item.name }}/"
-      with_items: "{{ php_versions }}"
-      loop_control:
-        label: "Installing PHP {{ item.version }}"
-
-    - name: Install php extensions
-      shell: |
-        brew link --force --overwrite {{ item[0].name }};
-        pecl uninstall -r {{ item[1] }};
-        pecl install {{ item[1] }};
-        brew unlink {{ item[0].name }};
-      args:
-        creates: "/usr/local/lib/php/pecl/{{ item[0].ext_dir }}/{{ item[1] }}.so"
-      with_nested:
-        - "{{ php_versions }}"
-        - "{{ php_extensions }}"
-      loop_control:
-        label: "Installing {{ item[1] }} for {{ item[0].name }}"
-
     - name: Switch PHP script
-      shell: "curl -L https://gist.githubusercontent.com/rhukster/f4c04f1bf59e0b74e335ee5d186a98e2/raw > /usr/local/bin/sphp;"
+      shell: "curl -L https://gist.githubusercontent.com/rhukster/f4c04f1bf59e0b74e335ee5d186a98e2/raw/791fda77946ab2dbd053d7f27e9237aaf7392c4b/sphp.sh > /usr/local/bin/sphp;"
       args:
         creates: "/usr/local/bin/sphp"
 
@@ -67,28 +37,8 @@
       loop_control:
         label: "Setting [{{ item[0].section }}] {{ item[0].option }} to {{ item[0].value }} for PHP {{ item[1].version }}"
 
-    - name: Cleanup php.ini files
-      lineinfile:
-        dest: "/usr/local/etc/php/{{ item.version }}/php.ini"
-        regexp: '^(zend_)?extension=\"[a-z]+\.so\"'
-        state: absent
-      with_items: "{{ php_versions }}"
-      loop_control:
-        label: "Cleaning up PHP {{ item.version }} ini file"
-
-    - name: Extensions configuration
-      template:
-        src: "../templates/php/ext-{{ item[0] }}.ini"
-        dest: "/usr/local/etc/php/{{ item[1].version }}/conf.d/ext-{{ item[0] }}.ini"
-        mode: 0644
-      with_nested:
-        - "{{ php_extensions }}"
-        - "{{ php_versions }}"
-      loop_control:
-        label: "Configuring {{ item[0] }} for PHP {{ item[1].version }}"
-
     - name: Switch PHP to version 7.3
-      command: "sphp 7.3 -s"
+      command: "sphp 8.0 -s"
 
     ################################################################################
     # Symfony CLI                                                                  #

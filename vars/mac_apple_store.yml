@@ -1,9 +1,0 @@
-mas_installed_apps:
-  - { id: 425264550, name: "Blackmagic Disk Speed Test" }
-  - { id: 1466185689, name: "Blackmagic RAW Speed Test" }
-  - { id: 937984704, name: "Amphetamine" }
-  - { id: 736189492, name: "Notability" }
-
-mas_email: ""
-mas_password: ""
-mas_signin_dialog: yes
