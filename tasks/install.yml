@@ -4,3 +4,8 @@
     pwd;
     brew bundle --file Brewfile;
   ignore_errors: yes
+
+- name: Make sure directory exists
+  file:
+    path: /usr/local/bin
+    state: directory

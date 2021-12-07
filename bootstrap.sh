@@ -11,9 +11,11 @@ if [[ $(/usr/bin/gcc 2>&1) =~ "no developer tools were found" ]] || [[ ! -x /usr
 fi
 
 # Download and install Homebrew
-if [[ ! -x /usr/local/bin/brew ]]; then
+if [[ ! -x /opt/homebrew/bin/brew ]]; then
     echo "Info   | Install   | homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/kuba/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
     echo "Info   | Update    | homebrew"
     brew update
 fi
@@ -22,24 +24,24 @@ fi
 export PATH=/usr/local/bin:$PATH
 
 # Download and install git
-if [[ ! -x /usr/local/bin/git ]]; then
+if [[ ! -x /opt/homebrew/bin/git ]]; then
     echo "Info   | Install   | git"
     brew install git
 fi
 
 # Download and install ruby
-if [[ ! -x /usr/local/bin/ruby ]]; then
+if [[ ! -x /opt/homebrew/bin/ruby ]]; then
     echo "Info   | Install   | ruby"
     brew install ruby
 fi
 
-if [[ `which ruby` != "/usr/local/bin/ruby" ]]; then
+if [[ `which ruby` != "/opt/homebrew/bin/ruby" ]]; then
     echo "Info   | Symlink   | ruby"
     brew link --overwrite ruby
 fi
 
 # Download and install Ansible
-if [[ ! -x /usr/local/bin/ansible ]]; then
+if [[ ! -x /opt/homebrew/bin/ansible ]]; then
     brew install ansible
 fi
 
@@ -52,8 +54,8 @@ cd $ANSIBLE_CONFIGURATION_DIRECTORY
 git pull
 
 # run provisioning
-ansible-playbook playbooks/php.yml
 ansible-playbook main.yml
+ansible-playbook playbooks/php.yml
 ansible-playbook playbooks/fisher.yml
 
 read -p "Do You wish to configure macOS now ? [yN] " configureMacOS
