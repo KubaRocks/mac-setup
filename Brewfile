@@ -1,5 +1,4 @@
 # TAPS
-tap "exolnet/deprecated"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
