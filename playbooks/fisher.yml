@@ -8,7 +8,7 @@
 
   tasks:
     - name: Install fisher
-      shell: curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+      shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
       args:
         creates: ~/.config/fish/functions/fisher.fish
 
