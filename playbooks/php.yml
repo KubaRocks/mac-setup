@@ -14,11 +14,11 @@
     - name: Switch PHP script
       shell: "curl -L https://gist.githubusercontent.com/rhukster/f4c04f1bf59e0b74e335ee5d186a98e2/raw/791fda77946ab2dbd053d7f27e9237aaf7392c4b/sphp.sh > /usr/local/bin/sphp;"
       args:
-        creates: "/usr/local/bin/sphp"
+        creates: "~/bin/sphp"
 
     - name: Execution attributes for sphp script
       file:
-        path: "/usr/local/bin/sphp"
+        path: "~/bin/sphp"
         mode: "0755"
 
     ################################################################################
@@ -52,7 +52,7 @@
     - name: Make Symfony CLI available globally
       copy:
         src: "{{ lookup('env','HOME') }}/.symfony/bin/symfony"
-        dest: /usr/local/bin/symfony
+        dest: ~/bin/symfony
         mode: u=rwx,g=rx,o=rx
 
     - name: Install nss

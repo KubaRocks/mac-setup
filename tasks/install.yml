@@ -7,5 +7,5 @@
 
 - name: Make sure directory exists
   file:
-    path: /usr/local/bin
+    path: ~/bin
     state: directory
