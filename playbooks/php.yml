@@ -12,7 +12,7 @@
     ################################################################################
 
     - name: Switch PHP script
-      shell: "curl -L https://gist.githubusercontent.com/rhukster/f4c04f1bf59e0b74e335ee5d186a98e2/raw/791fda77946ab2dbd053d7f27e9237aaf7392c4b/sphp.sh > /usr/local/bin/sphp;"
+      shell: "curl -L https://gist.githubusercontent.com/rhukster/f4c04f1bf59e0b74e335ee5d186a98e2/raw/791fda77946ab2dbd053d7f27e9237aaf7392c4b/sphp.sh > ~/bin/sphp;"
       args:
         creates: "~/bin/sphp"
 
