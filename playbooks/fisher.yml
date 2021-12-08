@@ -13,7 +13,7 @@
         creates: ~/.config/fish/functions/fisher.fish
 
     - name: Install fisher deps
-      shell: fisher add {{ item[0] }}
+      shell: fisher install {{ item[0] }}
       args:
         executable: /opt/homebrew/bin/fish
       with_items: "{{ fisher_packages }}"
